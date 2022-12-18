@@ -1,19 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import chatAPI, { sendMessage } from './chatAPI.js';
 import './App.css';
 
-const chatAPI = {};
-function sendMessage(msgObj) {
-  const newMessage = chatAPI.newMessage;
-
-  // this logic is not robust and assumes errors never happen :) just for demo
-  if (!newMessage) {
-    return alert('Something went wrong!');
-  }
-
-  newMessage(msgObj);
-}
-
 function App() {
+  useEffect(() => {
+    // useEffect will fire twice in StrictMode (on dev but not production)
+    // https://stackoverflow.com/questions/61254372/my-react-component-is-rendering-twice-because-of-strict-mode/61897567#61897567
+    chatAPI.start();
+  });
+
   return (
     <div id="App">
       <header>Chat</header>
@@ -24,25 +19,39 @@ function App() {
 }
 
 function ChatContainer() {
+  const bottomElem = useRef();
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
     chatAPI.newMessage = (msgObj) => {
       setMessages(messages.concat([msgObj]));
     };
+
+    // scroll down to see newest message
+    bottomElem.current.scrollIntoView({ behavior: 'smooth' });
   });
 
   return (
     <main>
-      {messages && messages.map(msgObj => <MessageItem key={msgObj.id} message={msgObj} />)}
+      {messages && messages.map(msgObj => <MessageItem key={msgObj.id} msgObj={msgObj} />)}
+      <span ref={bottomElem}></span>
     </main>
   );
 }
 
 function MessageItem(props) {
+  const msgObj = props.msgObj;
+  const msgBody = msgObj.body;
+
+  if (msgObj.user === 'bot') {
+    return (
+      <div className="message from" dangerouslySetInnerHTML={{ __html: msgBody }} />
+    );
+  }
+
   return (
-    <div>
-      {props.message.body}
+    <div className="message to">
+      {msgBody}
     </div>
   );
 }
@@ -57,9 +66,14 @@ function UserInput() {
   function handleSubmit(e) {
     e.preventDefault();
 
+    if (!msgBody) {
+      // blank message, do nothing
+      return false;
+    }
+
     const msgObj = {
-      id: Date.now(), // rudimentary id assignment for demo only
-      user: 'user1',
+      id: Date.now(), // rudimentary key assignment for demo only
+      user: 'user',
       body: msgBody
     };
 

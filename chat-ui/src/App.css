@@ -1,3 +1,11 @@
 .App {
   text-align: center;
 }
+
+.message {
+  color: blue;
+}
+
+.message.from {
+  color: red;
+}
