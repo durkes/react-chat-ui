@@ -1,4 +1,3 @@
 # react-chat-ui
- React chat UI demo source code
 
-Check out the [demo site](https://github.com/durkes/chat-demo)
+Check out the [live demo](https://durkes.github.io/react-chat-ui/)
