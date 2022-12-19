@@ -12,20 +12,20 @@ header {
   border-bottom: 1px solid #e6e5eb;
 }
 
-.bubble {
+.message {
   margin: 1em 0;
 }
 
-.bubble.to {
+.message.to {
   margin-left: 4em;
   text-align: right;
 }
 
-.bubble.from {
+.message.from {
   margin-right: 4em;
 }
 
-.bubble .message {
+.message .body {
   text-align: left;
   background-color: #2593ff;
   color: #fff;
@@ -33,9 +33,13 @@ header {
 
   padding: 8px 14px;
   border-radius: 18px;
+  overflow-wrap: break-word;
+
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
-.bubble.from .message {
+.message.from .body {
   background-color: #e6e5eb;
   color: #0f0f0f;
 }
@@ -48,7 +52,6 @@ header {
 .user-input button {
   outline: none !important;
   font-size: 1em;
-  height: 2;
   padding: 8px 14px;
   border: 1px solid #e6e5eb;
   box-sizing: border-box;
@@ -60,11 +63,13 @@ header {
 }
 
 .user-input button {
+  color: #555;
   border-radius: 0 18px 18px 0;
   background-color: #e6e5eb;
   width: 20%;
 }
 
 .user-input button:hover {
+  color: #333;
   cursor: pointer;
 }
