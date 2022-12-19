@@ -31,8 +31,7 @@ const botReplies = [
     'If you\'re curious, you can check out the <a href="https://github.com/durkes/react-chat-ui" target="_blank">source code</a>.',
     'The interesting stuff is in the <a href="https://github.com/durkes/react-chat-ui/tree/main/chat-ui/src" target="_blank">chat-ui/src</a> directory.',
     'BTW, I can send parsed HTML, but you cannot. Sometimes it\'s good to be a bot :)',
-    'This is my last message! I will not reply to you after this.',
-    'OK, this one really is my last reply. Have a great day!'
+    'This is my last unique message. Have a great day!',
 ];
 
 function chatBotReply() {
