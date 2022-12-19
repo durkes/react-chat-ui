@@ -26,6 +26,7 @@ header {
 }
 
 .bubble .message {
+  text-align: left;
   background-color: #2593ff;
   color: #fff;
   display: inline-block;
