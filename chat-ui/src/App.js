@@ -45,15 +45,15 @@ function MessageItem(props) {
 
   if (msgObj.user === 'bot') {
     return (
-      <div className="bubble from">
-        <div className="message" dangerouslySetInnerHTML={{ __html: msgBody }} />
+      <div className="message from">
+        <div className="body" dangerouslySetInnerHTML={{ __html: msgBody }} />
       </div>
     );
   }
 
   return (
-    <div className="bubble to">
-      <div className="message">
+    <div className="message to">
+      <div className="body">
         {msgBody}
       </div>
     </div>
