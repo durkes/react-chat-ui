@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div id="App">
-      <header>Chat</header>
+      <header>Chat Demo</header>
       <ChatContainer />
       <UserInput />
     </div>
@@ -45,13 +45,17 @@ function MessageItem(props) {
 
   if (msgObj.user === 'bot') {
     return (
-      <div className="message from" dangerouslySetInnerHTML={{ __html: msgBody }} />
+      <div className="bubble from">
+        <div className="message" dangerouslySetInnerHTML={{ __html: msgBody }} />
+      </div>
     );
   }
 
   return (
-    <div className="message to">
-      {msgBody}
+    <div className="bubble to">
+      <div className="message">
+        {msgBody}
+      </div>
     </div>
   );
 }
@@ -67,7 +71,7 @@ function UserInput() {
     e.preventDefault();
 
     if (!msgBody) {
-      // blank message, do nothing
+      // blank input, do nothing
       return false;
     }
 
@@ -82,9 +86,9 @@ function UserInput() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" value={msgBody} onChange={handleChange} />
-      <button>Send</button>
+    <form onSubmit={handleSubmit} className="user-input">
+      <input autoFocus type="text" value={msgBody} onChange={handleChange} />
+      <button type="submit">Send</button>
     </form>
   );
 }

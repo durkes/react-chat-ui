@@ -1,11 +1,69 @@
-.App {
-  text-align: center;
+#App {
+  font-size: 16px;
+  line-height: 1.25;
+  max-width: 400px;
+  margin: auto;
 }
 
-.message {
-  color: blue;
+header {
+  font-size: 1.8em;
+  font-weight: bold;
+  padding: 0.25em 0.1em;
+  border-bottom: 1px solid #e6e5eb;
 }
 
-.message.from {
-  color: red;
+.bubble {
+  margin: 1em 0;
+}
+
+.bubble.to {
+  margin-left: 4em;
+  text-align: right;
+}
+
+.bubble.from {
+  margin-right: 4em;
+}
+
+.bubble .message {
+  background-color: #2593ff;
+  color: #fff;
+  display: inline-block;
+
+  padding: 8px 14px;
+  border-radius: 18px;
+}
+
+.bubble.from .message {
+  background-color: #e6e5eb;
+  color: #0f0f0f;
+}
+
+.user-input {
+  margin: 1.5em 0;
+}
+
+.user-input input,
+.user-input button {
+  outline: none !important;
+  font-size: 1em;
+  height: 2;
+  padding: 8px 14px;
+  border: 1px solid #e6e5eb;
+  box-sizing: border-box;
+}
+
+.user-input input {
+  border-radius: 18px 0 0 18px;
+  width: 80%;
+}
+
+.user-input button {
+  border-radius: 0 18px 18px 0;
+  background-color: #e6e5eb;
+  width: 20%;
+}
+
+.user-input button:hover {
+  cursor: pointer;
 }
