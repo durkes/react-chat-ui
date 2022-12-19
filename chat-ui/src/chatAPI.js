@@ -28,10 +28,10 @@ chatAPI.start = () => {
 const botReplies = [
     'Hello. I\'m a chat bot. Send a message to see my next response.',
     'I will send you a message each time you reply. There is no backend for this demo. My replies are hardcoded.',
-    'If you\'re curious, you can check out the <a href="https://github.com/durkes/react-chat-ui" target="_blank">source code</a>.',
+    'This app was built using React. If you\'re curious, you can check out the <a href="https://github.com/durkes/react-chat-ui" target="_blank">source code</a>.',
     'The interesting stuff is in the <a href="https://github.com/durkes/react-chat-ui/tree/main/chat-ui/src" target="_blank">chat-ui/src</a> directory.',
     'BTW, I can send parsed HTML, but you cannot. Sometimes it\'s good to be a bot :)',
-    'This is my last unique message. Have a great day!',
+    'This is my last unique message. I hope you enjoyed the demo and thanks for stopping by! Have a great day!',
 ];
 
 function chatBotReply() {
