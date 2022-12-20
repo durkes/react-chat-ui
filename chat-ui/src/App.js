@@ -39,8 +39,7 @@ function ChatContainer() {
   );
 }
 
-function MessageItem(props) {
-  const msgObj = props.msgObj;
+function MessageItem({ msgObj }) {
   const msgBody = msgObj.body;
 
   if (msgObj.user === 'bot') {
