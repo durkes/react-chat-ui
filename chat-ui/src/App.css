@@ -3,19 +3,12 @@ body {
   line-height: 1.25;
 }
 
-input,
-select,
-button {
-  font-size: 100%;
-}
-
 .App {
-  width: 100%;
   max-width: 400px;
   margin: auto;
 }
 
-header {
+.App header {
   font-size: 1.8em;
   font-weight: bold;
   padding: 0.25em 0.1em;
