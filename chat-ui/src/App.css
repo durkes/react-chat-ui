@@ -1,6 +1,15 @@
-#App {
+body {
   font-size: 16px;
   line-height: 1.25;
+}
+
+input,
+select,
+button {
+  font-size: 100%;
+}
+
+.App {
   max-width: 400px;
   margin: auto;
 }

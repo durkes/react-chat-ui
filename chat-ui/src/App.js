@@ -10,7 +10,7 @@ function App() {
   });
 
   return (
-    <div id="App">
+    <div className="App">
       <header>Chat Demo</header>
       <ChatContainer />
       <UserInput />
