@@ -1,6 +1,14 @@
+:root {
+  --main-bg-gray: #e6e5eb;
+  --main-bg-blue: #28f;
+  --main-text-dark: #333;
+  --main-text-gray: #666;
+}
+
 body {
   font-size: 16px;
   line-height: 1.25;
+  color: var(--main-text-dark);
 }
 
 .App {
@@ -12,7 +20,7 @@ body {
   font-size: 1.8em;
   font-weight: bold;
   padding: 0.25em 0.1em;
-  border-bottom: 1px solid #e6e5eb;
+  border-bottom: 1px solid var(--main-bg-gray);
 }
 
 .message {
@@ -30,8 +38,7 @@ body {
 
 .message .body {
   text-align: left;
-  background-color: #2593ff;
-  color: #fff;
+  background-color: var(--main-bg-gray);
   display: inline-block;
 
   padding: 8px 14px;
@@ -42,9 +49,9 @@ body {
   max-width: 100%;
 }
 
-.message.from .body {
-  background-color: #e6e5eb;
-  color: #0f0f0f;
+.message.to .body {
+  background-color: var(--main-bg-blue);
+  color: #fff;
 }
 
 .user-input {
@@ -56,7 +63,7 @@ body {
   outline: none !important;
   font-size: 1em;
   padding: 8px 14px;
-  border: 1px solid #e6e5eb;
+  border: 1px solid var(--main-bg-gray);
   box-sizing: border-box;
 }
 
@@ -66,13 +73,14 @@ body {
 }
 
 .user-input button {
-  color: #555;
+  color: var(--main-text-gray);
   border-radius: 0 18px 18px 0;
-  background-color: #e6e5eb;
+  background-color: var(--main-bg-gray);
   width: 20%;
 }
 
 .user-input button:hover {
-  color: #333;
+  color: var(--main-text-dark);
+  transition: 0.5s;
   cursor: pointer;
 }
