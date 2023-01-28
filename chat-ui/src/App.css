@@ -1,9 +1,7 @@
 :root {
   --bg-gray: #e4e6eb;
-  --bg-gray-darker: #d4d6db;
   --bg-blue: #18f;
   --text-dark: #333;
-  --text-gray: #666;
 }
 
 body {
@@ -76,14 +74,17 @@ body {
 
 .user-input button {
   background-color: var(--bg-gray);
-  color: var(--text-gray);
+  color: var(--text-dark);
   border-radius: 0 18px 18px 0;
   width: 20%;
+  transition: 0.1s;
+  cursor: pointer;
 }
 
 .user-input button:hover {
-  background-color: var(--bg-gray-darker);
-  border-color: var(--bg-gray-darker);
-  transition: 0.5s;
-  cursor: pointer;
+  transform: translateY(-1px);
+}
+
+.user-input button:active {
+  transform: translateY(1px);
 }
