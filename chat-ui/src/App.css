@@ -1,7 +1,8 @@
 :root {
-  --bg-gray: #e4e6eb;
+  --bg-gray: #f0f1f5;
   --bg-blue: #18f;
-  --text-dark: #333;
+  --text-gray: #666;
+  --text-dark: #222;
 }
 
 body {
@@ -74,7 +75,7 @@ body {
 
 .user-input button {
   background-color: var(--bg-gray);
-  color: var(--text-dark);
+  color: var(--text-gray);
   border-radius: 0 18px 18px 0;
   width: 20%;
   transition: 0.1s;
@@ -82,9 +83,9 @@ body {
 }
 
 .user-input button:hover {
-  transform: translateY(-1px);
+  color: var(--text-dark);
 }
 
 .user-input button:active {
-  transform: translateY(0);
+  transform: translateY(1px);
 }
