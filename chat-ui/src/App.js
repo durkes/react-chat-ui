@@ -19,7 +19,7 @@ function App() {
 }
 
 function ChatContainer() {
-  const bottomElem = useRef();
+  const bottomElem = useRef(null);
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
@@ -60,6 +60,7 @@ function MessageItem({ msgObj }) {
 }
 
 function UserInput() {
+  const msgBodyElem = useRef(null);
   const [msgBody, setMsgBody] = useState('');
 
   function handleChange(e) {
@@ -68,6 +69,7 @@ function UserInput() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    msgBodyElem.current.focus(); // return focus to input in case clicked submit button
 
     if (!msgBody) {
       // blank input, do nothing
@@ -86,7 +88,7 @@ function UserInput() {
 
   return (
     <form onSubmit={handleSubmit} className="user-input">
-      <input autoFocus type="text" value={msgBody} onChange={handleChange} />
+      <input autoFocus ref={msgBodyElem} type="text" value={msgBody} onChange={handleChange} />
       <button type="submit">Send</button>
     </form>
   );
